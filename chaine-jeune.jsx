@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+const { useState, useEffect } = React;
 
 const ALL_PERIODS = [
   { id: 'p1', start: '2026-04-20', end: '2026-04-22', label: 'lundi 20 avril au mercredi 22 avril 2026', monthKey: '2026-04' },
@@ -707,3 +707,5 @@ const S = {
   btnCopy:{ flex:1, padding:'9px', background:'#475569', color:'#fff', border:'none', borderRadius:8, fontSize:13, fontWeight:700, cursor:'pointer', fontFamily:'inherit' },
   btnCopied:{ background:'#0f2a4a' },
 };
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
