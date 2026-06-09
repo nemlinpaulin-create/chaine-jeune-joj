@@ -713,5 +713,11 @@ const S = {
   btnCopy:{ flex:1, padding:'9px', background:'#475569', color:'#fff', border:'none', borderRadius:8, fontSize:13, fontWeight:700, cursor:'pointer', fontFamily:'inherit' },
   btnCopied:{ background:'#0f2a4a' },
 };
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+//const root = ReactDOM.createRoot(document.getElementById('root'));
+//root.render(<App />);
+// Supprimez ces deux lignes si elles existent
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<App />);
+
+// Et ajoutez ceci à la place :
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
