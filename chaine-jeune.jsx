@@ -299,7 +299,7 @@ function RappelModal({ eng, onClose }) {
   );
 }
 
-export default function App() {
+function App() {
   const [tab, setTab]               = useState('form');
   const [form, setForm]             = useState(emptyForm());
   const [errors, setErrors]         = useState({});
