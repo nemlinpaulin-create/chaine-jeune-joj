@@ -311,17 +311,23 @@ export default function App() {
   const [activeMois, setActiveMois] = useState('2026-06');
   const [filterMois, setFilterMois] = useState('');
 
-  useEffect(() => {
-    (async () => {
-      try { const r = await window.storage.get('eng_v2'); if (r) setEngagements(JSON.parse(r.value)); } catch {}
-    })();
-  }, []);
-
-  async function saveAll(list) {
-    setEngagements(list);
-    try { await window.storage.set('eng_v2', JSON.stringify(list)); } catch {}
+useEffect(() => {
+  const saved = localStorage.getItem('eng_v2');
+  if (saved) {
+    try {
+      setEngagements(JSON.parse(saved));
+    } catch (e) {
+      console.error('Erreur de chargement', e);
+    }
   }
+}, []);
 
+
+function saveAll(list) {
+  setEngagements(list);
+  localStorage.setItem('eng_v2', JSON.stringify(list));
+}
+  
   function togglePeriode(id) {
     const ids = form.periodeIds.includes(id)
       ? form.periodeIds.filter(x => x !== id)
